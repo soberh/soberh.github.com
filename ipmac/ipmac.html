@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="height:100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>get ip or mac</title>
+</head>
+<body>
+<h1>get ip or mac</h1>
+<div id="info"></div>
+<script language="JavaScript"> 
+function GetLocalIPAddr(){ 
+	var oSetting = null; 
+	var ip = null; 
+	try{ 
+		oSetting = new ActiveXObject("rcbdyctl.Setting"); 
+		ip = oSetting.GetIPAddress; 
+		alert(ip); 
+		if (ip.length == 0){ 
+			return "没有连接到Internet"; 
+		} 
+		oSetting = null; 
+	}catch(e){ 
+		return ip; 
+	} 
+	return ip; 
+} 
+document.getElementById("info").innerHTML = GetLocalIPAddr();
+</script> 
+</body>
+</html>
